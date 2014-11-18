@@ -1,0 +1,1 @@
+﻿Get-ADComputer -Filter * -SearchBase "ou=workstations,ou=computers,ou=fl,ou=-eq health solutions-,dc=eqhs,dc=local" -ResultPageSize 0 -Prop CN,lastLogonTimestamp | Select CN,@{n="lastLogonDate";e={[datetime]::FromFileTime($_.lastLogonTimestamp)}} | Out-GridView
