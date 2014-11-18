@@ -1,0 +1,4 @@
+#Created by Daniel Winship 8/29/2014 deletes files from a target directory
+#And then emails the sysadmins to alert the task is completed
+Remove-Item "C:\Program Files (x86)\Ipswitch\Logging Server\Logs\*.xml" -Force
+Send-MailMessage -to "Sysadmins@eqhs.org" -From "FL-FTP@eqhs.org" -subject "FTP Log files purged" -Body "Log files C:\Program Files (x86)\Ipswitch\Logging Server\Logs\ have been deleted" -SmtpServer "FL-mail" Enter file contents here
